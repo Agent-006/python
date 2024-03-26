@@ -122,3 +122,403 @@ So, whenever we assign a new value to the immutable data type, a new memory loca
 
 ⭐ Advance: Decorators, Generators, Iterators, MetaProgramming
 
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Internal working of python | copy, refrence counts, slice ✅
+
+-> Refer to this link:
+
+🔗 [Video explanation 📽️](https://www.youtube.com/watch?v=brp5aiuWfso&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s&index=7)
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Numbers in python ✅
+
+-> decimal context manager
+
+🔗 [Video explanation 📽️](https://www.youtube.com/watch?v=E4GNbP4SbKM&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s&index=8)
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Strings in python ✅
+
+->
+
+```
+>>> num_list = "0123456789"
+>>> num_list[:]
+'0123456789'
+>>> num_list[3:]
+'3456789'
+>>> num_list[:7]
+'0123456'
+>>> num_list[0:7:1]
+'0123456'
+>>> num_list[0:7:2]
+'0246'
+>>> num_list[0:7:4]
+'04'
+>>> num_list[0:7:4]
+'04'
+>>> num_list[0:7:-1]
+''
+>>> num_list[0:7:-2]
+''
+>>> num_list[::-2]
+'97531'
+>>> num_list[::]
+'0123456789'
+>>> num_list[::-1]
+'9876543210'
+>>> num_list[::2]
+'02468'
+>>> chai = 'Masala chai'
+>>> chai
+'Masala chai'
+>>> print(chai.lower())
+masala chai
+>>> print(chai.upper())
+MASALA CHAI
+>>> chai
+'Masala chai'
+>>> chai = "    Masala Chai    "
+>>> chia
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'chia' is not defined
+>>> chai
+'    Masala Chai    '
+>>> print(chai.strip())
+Masala Chai
+>>> chai = "Lemon Chai"
+>>> chia
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'chia' is not defined
+>>> chai
+'Lemon Chai'
+>>> print(chai.replace("Lemon", "Ginger"))
+Ginger Chai
+>>> chai
+'Lemon Chai'
+>>> chai = "Lemon, Ginger, Masala, Mint"
+>>> chia
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'chia' is not defined
+>>> chai
+'Lemon, Ginger, Masala, Mint'
+>>> print(chai.split())
+['Lemon,', 'Ginger,', 'Masala,', 'Mint']
+>>> print(chai.split(", "))
+['Lemon', 'Ginger', 'Masala', 'Mint']
+>>> print(chai.split(","))
+['Lemon', ' Ginger', ' Masala', ' Mint']
+>>> chai = "Masala Chai"
+>>> print(chai.find("Chai"))
+7
+>>> chai = "Masala Chai Chai Chai"
+>>> print(chai.count("Chai"))
+3
+>>> chai_type = "Masala"
+>>> quantity = 2
+>>> order = "I ordered {} cups of {} chai"
+>>> order
+'I ordered {} cups of {} chai'
+>>> print(order.format(quantity, chai_type))
+I ordered 2 cups of Masala chai
+>>> chai_variety = ["Lemon", "Masala", "Ginger"]
+>>> chai_variety
+['Lemon', 'Masala', 'Ginger']
+>>> print(chai_variety.toStr())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'toStr'
+>>> print("".join(chai_variety))
+LemonMasalaGinger
+>>> print(" ".join(chai_variety))
+Lemon Masala Ginger
+>>> print(" ,".join(chai_variety))
+Lemon ,Masala ,Ginger
+>>> print(", ".join(chai_variety))
+Lemon, Masala, Ginger
+>>> chai = "Masala Chai"
+>>> chai
+'Masala Chai'
+>>> print(len(chai))
+11
+>>> for letter in chai:
+...     print(letter)
+...
+M
+a
+s
+a
+l
+a
+
+C
+h
+a
+i
+>>> chai = "He said, \"Masala chai is awesome\" "
+>>> chai
+'He said, "Masala chai is awesome" '
+>>> chai = "Masala\nChai"
+>>> chai
+'Masala\nChai'
+>>> print(chai)
+Masala
+Chai
+>>> chai = r"Masala\nChai"
+>>> print(chai)
+Masala\nChai
+>>> chai = r"c:\user\pwd\"
+  File "<stdin>", line 1
+    chai = r"c:\user\pwd\"
+           ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> chai = r"c\:\user\pwd\"
+  File "<stdin>", line 1
+    chai = r"c\:\user\pwd\"
+           ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> chai = r"c:\\user\\pwd\\"
+>>> chai
+'c:\\\\user\\\\pwd\\\\'
+>>> print(chai)
+c:\\user\\pwd\\
+>>> chai = r"c\:\user\pwd"
+>>> print(chai)
+c\:\user\pwd
+>>> chai = r"c:\user\pwd\"
+  File "<stdin>", line 1
+    chai = r"c:\user\pwd\"
+           ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> chai = r"c:\user\pwd"
+>>> print(chai)
+c:\user\pwd
+>>> chai = "Masala Chai"
+>>> print("Masala" in chai)
+True
+>>> print("Masalaa" in chai)
+False
+```
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 List in python ✅
+
+```
+>>> tea_varieties = ["Black", "Green", "Oolong", "White"]
+>>> print(tea_varieties)
+['Black', 'Green', 'Oolong', 'White']
+>>> print(tea_varieties[0])
+Black
+>>> print(tea_varieties[-1])
+White
+>>> print(tea_varieties[1:3])
+['Green', 'Oolong']
+>>> print(tea_varieties[:3])
+['Black', 'Green', 'Oolong']
+>>> print(tea_varieties[:2])
+['Black', 'Green']
+>>> print(tea_varieties[:2:2])
+['Black']
+>>> print(tea_varieties[:2:-2])
+['White']
+>>> print(tea_varieties[::-2])
+['White', 'Green']
+>>> print(tea_varieties[::-1])
+['White', 'Oolong', 'Green', 'Black']
+>>> tea_varieties[3] = "Herbal"
+>>> print(tea_varieties
+... print(tea_varieties
+  File "<stdin>", line 1
+    print(tea_varieties
+          ^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> print(tea_varieties)
+['Black', 'Green', 'Oolong', 'Herbal']
+>>> tea_varieties[1:2]
+['Green']
+>>> tea_varieties[1:2] = "Lemon"
+>>> tea_varieties[1:2]
+['L']
+>>> tea_varieties
+['Black', 'L', 'e', 'm', 'o', 'n', 'Oolong', 'Herbal']
+>>> tea_varieties = ["Black", "Green", "Oolong", "White"]
+>>> print(tea_varieties)
+['Black', 'Green', 'Oolong', 'White']
+>>> tea_varieties[1:2]
+['Green']
+>>> tea_varieties[1:2] = ["Lemon"]
+>>> tea_varieties[1:2]
+['Lemon']
+>>> print(tea_varieties)
+['Black', 'Lemon', 'Oolong', 'White']
+>>> tea_varieties[1:3]
+['Lemon', 'Oolong']
+>>> tea_varieties[1:3] = ["Green", "Masala"]
+>>> tea_varieties[1:3]
+['Green', 'Masala']
+>>> print(tea_varieties)
+['Black', 'Green', 'Masala', 'White']
+>>> tea_varieties[1:1]
+[]
+>>> tea_varieties[1:1] = ["test", "test"]
+>>> tea_varieties[1:1]
+[]
+>>> print(tea_varieties)
+['Black', 'test', 'test', 'Green', 'Masala', 'White']
+>>> tea_varieties[1:2]
+['test']
+>>> tea_varieties[1:3]
+['test', 'test']
+>>> tea_varieties[1:3] = []
+>>> print(tea_varieties)
+['Black', 'Green', 'Masala', 'White']
+>>> for tea in tea_varieties:
+...     print(tea)
+...
+Black
+Green
+Masala
+White
+>>> for tea in tea_varieties:
+...     print(tea, end="-")
+...
+Black-Green-Masala-White->>>
+>>> if "Oolong" in tea_varieties:
+...     print("I have Oolong tea")
+...
+>>> tea_varieties.append("Oolong")
+>>> if "Oolong" in tea_varieties:
+...     print("I have Oolong tea")
+...
+I have Oolong tea
+>>> tea_varieties.pop()
+'Oolong'
+>>> tea_varieties
+['Black', 'Green', 'Masala', 'White']
+>>> tea_varieties.remove("Green")
+>>> tea_varieties
+['Black', 'Masala', 'White']
+>>> tea_varieties.insert(1, "Green")
+>>> tea_varieties
+['Black', 'Green', 'Masala', 'White']
+>>> tea_varieties_copy = tea_varieties.copy()
+>>> tea_varieties_copy.append("Lemon")
+>>> tea_varieties_copy
+['Black', 'Green', 'Masala', 'White', 'Lemon']
+>>> tea_varieties
+['Black', 'Green', 'Masala', 'White']
+>>> squared_nums = [x**2 for x in range(10)]
+>>> squared_nums
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> cube_num = [y**3 for y in range(10)]
+>>> cube_num
+[0, 1, 8, 27, 64, 125, 216, 343, 512, 729]
+```
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Dictionary in python ✅
+
+->
+
+```
+>>> chai_types = {"Masala": "Spicy", "Ginger": "Zesty", "Green": "Mild"}
+>>> chai_types
+{'Masala': 'Spicy', 'Ginger': 'Zesty', 'Green': 'Mild'}
+>>> chai_types[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> chai_types["Masala"]
+'Spicy'
+>>> chai_types.get('Ginger')
+'Zesty'
+>>> chai_types.get('Gingery')
+>>> chai_types['Green'] = 'Fresh'
+>>> chai_types
+{'Masala': 'Spicy', 'Ginger': 'Zesty', 'Green': 'Fresh'}
+>>> for chai in chai_types:
+...     print(chai)
+...
+Masala
+Ginger
+Green
+>>> for chai in chai_types:
+...     print(chai, chai_types[chai])
+...
+Masala Spicy
+Ginger Zesty
+Green Fresh
+>>> for key, values in chai_types.items():
+...     print(key, values)
+...
+Masala Spicy
+Ginger Zesty
+Green Fresh
+>>> if "Masala" in chai_types:
+...     print('I have masala chai')
+...
+I have masala chai
+>>> print(len(chai_types))
+3
+>>> chai_types
+{'Masala': 'Spicy', 'Ginger': 'Zesty', 'Green': 'Fresh'}
+>>> chai_types["Earl Grey"] = "Citrus"
+>>> chai_types
+{'Masala': 'Spicy', 'Ginger': 'Zesty', 'Green': 'Fresh', 'Earl Grey': 'Citrus'}
+>>> chai_types.pop("Ginger")
+'Zesty'
+>>> chai_types
+{'Masala': 'Spicy', 'Green': 'Fresh', 'Earl Grey': 'Citrus'}
+>>> chai_types.pop()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: pop expected at least 1 argument, got 0
+>>> chai_types.popitem()
+('Earl Grey', 'Citrus')
+>>> chai_types
+{'Masala': 'Spicy', 'Green': 'Fresh'}
+>>> del chai_types["Green"]
+>>> chai_types
+{'Masala': 'Spicy'}
+>>> chai_types_copy = chai_types.copy()
+>>> tea_shop = {
+... "chai": {'Masala' : 'Spicy', 'Ginger' : 'Zesty'},
+... "Tea" : {'Green' : 'Mild', 'Black' : 'Strong'}
+... }
+>>> tea_shop
+{'chai': {'Masala': 'Spicy', 'Ginger': 'Zesty'}, 'Tea': {'Green': 'Mild', 'Black': 'Strong'}}
+>>> tea_shop['chai']
+{'Masala': 'Spicy', 'Ginger': 'Zesty'}
+>>> tea_shop['chai']['Ginger']
+'Zesty'
+>>> squared_nums = {x:x**2 for x in range(6)}
+>>> squared_nums
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+>>> squared_nums.clear()
+>>> squared_nums
+{}
+>>> keys = ['Masala', 'Ginger', 'Lemon']
+>>> keys
+['Masala', 'Ginger', 'Lemon']
+>>> default_value = 'Delicious'
+>>> new_dict = dict.fromkeys(keys, default_value)
+>>> new_dict
+{'Masala': 'Delicious', 'Ginger': 'Delicious', 'Lemon': 'Delicious'}
+>>> new_dict = dict.fromkeys(keys, keys)
+>>> new_dict
+{'Masala': ['Masala', 'Ginger', 'Lemon'], 'Ginger': ['Masala', 'Ginger', 'Lemon'], 'Lemon': ['Masala', 'Ginger', 'Lemon']}
+```
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Tuples in python ✅
+
+-> 
