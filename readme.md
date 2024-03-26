@@ -521,4 +521,66 @@ TypeError: pop expected at least 1 argument, got 0
 
 # 🎯 Tuples in python ✅
 
+->
+
+```
+>>> tea_types = ('Black', 'Green', 'Oolong')
+>>> tea_types
+('Black', 'Green', 'Oolong')
+>>> tea_types[0]
+'Black'
+>>> tea_types[-1]
+'Oolong'
+>>> tea_types[1:]
+('Green', 'Oolong')
+>>> tea_types[0]
+'Black'
+>>> tea_types[0] = 'Lemon'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> len(tea_types)
+3
+>>> more_tea = ('Herbal', 'Earl Grey')
+>>> all_tea = more_tea + tea_types
+>>> all_tea
+('Herbal', 'Earl Grey', 'Black', 'Green', 'Oolong')
+>>> if 'Green' in all_tea:
+...     print('I have green tea')
+...
+I have green tea
+>>> more_tea = ('Herbal', 'Earl Grey', 'Herbal')
+>>> more_tea
+('Herbal', 'Earl Grey', 'Herbal')
+>>> more_tea.count()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: tuple.count() takes exactly one argument (0 given)
+>>> more_tea.count('Herbal')
+2
+>>> tea_types
+('Black', 'Green', 'Oolong')
+>>> (black, green, Oologn) = tea_types
+>>> black
+'Black'
+>>> type(tea_types)
+<class 'tuple'>
+>>>
+```
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Conditional in python ✅
+
 -> 
+
+🌲 Classify a person's age group: Child( < 13), Teenager(13-19), Adult(20-59), Senior(60+)\
+🌲 Movie tickets are priced based on age: $12 for adults(18 and over), $8 for children. Everyone gets a $2 discount on Wednesday.\
+🌲 Assign a letter grade based on a student's score: A(90-100), B(80-89), C(7079), D(60-69), F(below 60).\
+🌲 Determine if a fruit is ripe, overripe, or unripe based on its color. (e.g., Banana: Green - Unripe, Yellow - Ripe, Brown - Overripe)\
+🌲 Suggest an activity based on the weather(e.g., Sunny - Go for a walk, Rainy - Read a book, Snowy - Build a snowman).\
+🌲 Choose a mode of transportation based on the distance (e.g., <3 km: Walk, 3-15 km: Bike, >15 km: Car).\
+🌲 Customize a coffee order: "Small", "Medium", or "Large" with an option for "Extra shot" of expresso.\
+🌲Check if a password is "Weak", "Medium", or "Strong". Criteria: <6 chars (Weak), 6-10 chars (Medium), >10 chars (Strong).\
+🌲 Determine if a year is a leap year.(Leap years are divisible by 4, but not by 100 unless also divisible by 400).\
+🌲 Recommend a type of pet food based on the pet's species and age. (e.g., Dog: <2 years - Puppy food, Cat: >5 years - Senior cat food).
