@@ -572,7 +572,7 @@ TypeError: tuple.count() takes exactly one argument (0 given)
 
 # 🎯 Conditional in python ✅
 
--> 
+->
 
 🌲 Classify a person's age group: Child( < 13), Teenager(13-19), Adult(20-59), Senior(60+)\
 🌲 Movie tickets are priced based on age: $12 for adults(18 and over), $8 for children. Everyone gets a $2 discount on Wednesday.\
@@ -584,3 +584,184 @@ TypeError: tuple.count() takes exactly one argument (0 given)
 🌲Check if a password is "Weak", "Medium", or "Strong". Criteria: <6 chars (Weak), 6-10 chars (Medium), >10 chars (Strong).\
 🌲 Determine if a year is a leap year.(Leap years are divisible by 4, but not by 100 unless also divisible by 400).\
 🌲 Recommend a type of pet food based on the pet's species and age. (e.g., Dog: <2 years - Puppy food, Cat: >5 years - Senior cat food).
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 loops in python ✅
+
+🌲 <b>Counting Positive Numbers</b>\
+ <b>Problem:</b> Given a list of numbers, count how many are positive.
+
+```
+numbers = [1, -2, 3, -4, 5, 6, -7, -8, 9, 10]
+```
+
+🌲 <b>Sum of Even Numbers</b>\
+ <b>Problem:</b> Calculate the sum of even numbers up to a given number `n`.
+
+🌲 <b>Multiplication Table Printer</b>\
+ <b>Problem:</b> Print the multiplication table for a given number up to 10, but skip the fifth iteration.
+
+🌲 <b>Reverse a string using a loop</b>\
+ <b>Problem:</b> Reverse a string using a loop.
+
+🌲 <b>Find the First Non-Repeated Character</b>\
+ <b>Problem:</b> Given a string, find the first non-repeated character.
+
+🌲 <b>Factorial Calculator</b>\
+ <b>Problem:</b> Compute the factorial of a number using a while loop.
+
+🌲 <b>Validate Input</b>\
+ <b>Problem:</b> Keep asking the user for input until they enter a number between 1 and 10.
+
+🌲 <b>Prime Number Checker</b>\
+ <b>Problem:</b> Check if a number is prime.
+
+🌲 <b>List Uniqueness Checker</b>\
+ <b>Problem:</b> Check if all elements in a list are unique. If a duplicate is found, exit the loop and print the duplicate.
+
+```
+ items = ["apple", "banana", "orange", "apple", "mango"]
+```
+
+🌲 <b>Exponential Backoff</b>\
+ <b>Problem:</b> Implement an exponential backoff strategy that doubles the wait time between retries, starting from 1 second, but stops after 5 retries.
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Behind the scene of loops in python ✅
+
+```
+>>> file = open("chai.py")
+>>> file.readline()
+'import time\n'
+>>> file.readline()
+'print("chai is here")\n'
+>>> file.readline()
+'username = "sagar"\n'
+>>> file.readline()
+'print(username)'
+>>> file.readline()
+''
+>>> file = open("chai.py")
+>>> file.__next__()
+'import time\n'
+>>> file.__next__()
+'print("chai is here")\n'
+>>> file.__next__()
+'username = "sagar"\n'
+>>> file.__next__()
+'print(username)'
+>>> file.__next__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> for line in open("chai.py"):
+...     print(line)
+...
+import time
+
+print("chai is here")
+
+username = "sagar"
+
+print(username)
+>>> for line in open("chai.py"):
+...     print(line, end='')
+...
+import time
+print("chai is here")
+username = "sagar"
+print(username)>>>
+>>> file = open("chai.py")
+>>> while True:
+...     line = file.readline()
+...     if not line:
+...             break
+...     print(line, end='')
+...
+import time
+print("chai is here")
+username = "sagar"
+print(username)>>>
+>>> test = 'sagar'
+>>> if not test:
+...     print('chai')
+...
+>>> test = ''
+>>> if not test:
+...     print('chai')
+...
+chai
+>>> myList = [1, 2, 3, 4]
+>>> I = iter(myList)
+>>> I
+<list_iterator object at 0x000001605938A440>
+>>> I.__next__()
+1
+>>> I
+<list_iterator object at 0x000001605938A440>
+>>> I.__next__()
+2
+>>> I.__next__()
+3
+>>> I.__next__()
+4
+>>> I.__next__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> file = open('chai.py')
+>>> iter(file) is file
+True
+>>> iter(file) is file.__iter__()
+True
+>>> myNewList = [1, 2, 3]
+>>> iter(myNewList) is myNewList
+False
+>>> D = {'a': 1, 'b': 2}
+>>> for key in D.keys():
+...     print(key)
+...
+a
+b
+>>> I = iter(D)
+>>> I
+<dict_keyiterator object at 0x00000160593935B0>
+>>> next(I)
+'a'
+>>> next(I)
+'b'
+>>> next(I)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> range(5)
+range(0, 5)
+>>> R = range(5)
+>>> R
+range(0, 5)
+>>> I = iter(R)
+>>> I
+<range_iterator object at 0x00000160593A7C50>
+>>> next(I)
+0
+>>> next(I)
+1
+>>> next(I)
+2
+>>> next(I)
+3
+>>> next(I)
+4
+>>> next(I)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>>
+```
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Problems on functions in python ✅
+
