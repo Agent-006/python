@@ -765,3 +765,139 @@ StopIteration
 
 # 🎯 Problems on functions in python ✅
 
+-> In python, functions are most commonly know as `definition` or `function definition`.
+
+```
+def square_of_num(number):
+    print(number ** 2)
+
+square_of_num(5)
+```
+
+### 🤔 Questions:
+
+🌲 <b>Basic Function Syntax</b>\
+ <b>Problem:</b> Write a function to calculate and return the square of a number.
+
+🌲 <b>Function with Multiple Parameters</b>\
+ <b>Problem:</b> Create a function that takes two numbers as parameters and returns their sum.
+
+🌲 <b>Polymorphism in Functions</b>\
+ <b>Problem:</b> Write a function `multiply` that multiplies two numbers, but can also accept and multiply strings.
+
+🌲 <b>Function Returning Multiple Values</b>\
+ <b>Problem:</b> Create a function that returns both the area and circumference of a circle given it's radius.
+
+🌲 <b>Default Parameter Value</b>\
+ <b>Problem:</b> Write a function that greets a user. If no name is provided, it should greet with a default name.
+
+🌲 <b>Lambda Function</b>\
+ <b>Problem:</b> Create a lambda function to compute the cube of a number.
+
+🌲 <b>Function with \*args</b>\
+ <b>Problem:</b> Write a function that takes variable number of arguments and return their sum.
+
+🌲 <b>Function with \*\*kwargs</b>\
+ <b>Problem:</b> Create a function that accepts any number of keyword arguments and prints them in the format `key:value`.
+
+🌲 <b>Generate Function with yield</b>\
+ <b>Problem:</b> Write a generator function that yields even numbers up to a specified limit.
+
+🌲 <b>Recursive Function</b>\
+ <b>Problem:</b> Create a recursive function to calculate the factorila of a number.
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Scopes and closure in python ✅
+
+bag theory
+clousure are also know as factory function
+
+```
+username = "thecoderwiz"
+
+def func():
+    # username = "coder"
+    print(username)
+
+print(username)
+func()
+```
+
+```
+x = 99
+
+def func2(y):
+    z = x + y
+    return z
+
+result = func2(1)
+print(result)
+
+def func3():
+    global x
+    x = 88
+func3()
+print(x)
+
+```
+
+Clousure
+
+```
+def f1():
+    x = 38
+    def f2():
+        print(x)
+    # f2()
+    return f2
+result = f1()
+result()
+print(result)
+```
+
+```
+def chaicoder(num):
+    def actual(x):
+        return x ** num
+    return actual
+
+result = chaicoder(2)
+print(result(2))
+print(result)
+
+```
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Object Oriented Programming in python (OOPs) ✅
+
+🌲 <b>Basic Class and Object</b>\
+ <b>Problem:</b> Create a Car class with attributes like brand and model. Then create an instance of this class.
+
+🌲 <b>Class Method and Self</b>\
+ <b>Problem:</b> Add a method to the Car class that displays the full name of the car (brand and model).
+
+🌲 <b>Inheritance</b>\
+ <b>Problem:</b> Create an ElectricCar class that inherits from the Car class and has an additional attribute battery_size.
+
+🌲 <b>Encapsulation</b>\
+ <b>Problem:</b> Modify the Car class to encapsulate the brand attribute, making it private, and provide a getter method for it.
+
+🌲 <b>Polymorphism</b>\
+ <b>Problem:</b> Demonstrate polymorphism by defining a method fuel_type in both Car and ElectricCar classes, but with different behaviours.
+
+🌲 <b>Class Variables</b>\
+ <b>Problem:</b> Add a class variable to Car that keeps track of the number of cars created.
+
+🌲 <b>Static Method</b>\
+ <b>Problem:</b> Add a static method to the Car class that returns a general description of a car.
+
+🌲 <b>Property Decorators</b>\
+ <b>Problem:</b> Use a property decorator in the Car class to make the model attribute read-only.
+
+🌲 <b>Class Inheritance and isinstance() Function</b>\
+ <b>Problem:</b> Demonstrate the use of isinstance() to check if my_tesla is an instance of Car and ElectricCar.
+
+🌲 <b>Multiple Inheritance</b>\
+ <b>Problem:</b> Create two classes Battery and Engine, and let the ElectricCar class inherit from both, demonstrating multiple inheritance.
