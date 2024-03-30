@@ -901,3 +901,16 @@ print(result)
 
 🌲 <b>Multiple Inheritance</b>\
  <b>Problem:</b> Create two classes Battery and Engine, and let the ElectricCar class inherit from both, demonstrating multiple inheritance.
+
+<hr style= "border-top: 1px dotted #ccc;">
+
+# 🎯 Decorators in python ✅
+
+🌲 <b>Timing Function Execution</b>\
+ <b>Problem:</b> Write a decorator that measures the time a function takes to execute.
+
+🌲 <b>Debugging Function Calls</b>\
+ <b>Problem:</b> Create a decorator to print the function name and the value of its arguments every time the function is called.
+
+🌲 <b>Cache Return Values</b>\
+ <b>Problem:</b> Implement a decorator that chaches the return values of a function, so that when it's called with the same arguments, the cached value is returned instead of re-executing the function.
